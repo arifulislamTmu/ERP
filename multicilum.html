@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous"> -->
+
+    <title>Hello, world!</title>
+  </head>
+  <body>
+    <div class="row">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-10 py-5">
+            <div class="table_headinh">
+                <h2>Create Assignment Questions </h2>
+            </div>
+            <hr>
+            <form method="POST" action="">
+            <div class="row">
+                <div class="col-lg-4">
+                 <div class="class_select py-4">
+                     <label> Select Course Name</label>
+                     <select class="form-select form-control" name="couse_name" aria-label="Default select example">
+                         <option value="" selected>Select Course Name</option>
+                             <option >abcd</option>
+                             <option >abcd</option>
+                             <option >abcd</option>
+                             <option >abcd</option>
+                   
+                    </select>
+                    </div>
+                </div>
+              
+           
+                <div class="col-lg-2">
+                 <div class="class_select py-4">
+                     <label> Last Date </label>
+                      <input type="date" name="last_date" class="form-control" required>
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                 <div class="class_select py-4">
+                     <label> Total Marks </label>
+                      <input type="text" name="total_mark" class="form-control" required>
+                    </div>
+                </div>
+            </div>
+     
+         <table class="table table-bordered" id="table_feild">
+             <thead>
+               <tr>
+                 <th scope="col">Question Name</th>
+                 <th scope="col">Figure</th>
+                 <th scope="col">Marks</th>
+                 <th scope="col">Action</th>
+               </tr>
+             </thead>
+             <tbody>
+               <tr>
+                 <td><textarea class="form-control" style="width: 300px"name="question_name[]" required></textarea> </td>
+                 <td><input type="file" class="form-control py-1 " name="figure[]"></td>
+                 <td><input type="text" class="form-control" name="marks[]" required></td>
+                 <td><input type="button" id="add" class="btn btn-warning" value="Form Add"></td>
+               </tr>
+             </tbody>
+       </table>
+      
+         <button  name="assign_save" class="btn btn-success">Save</button>
+         </form>
+        </div>
+       
+        <div class="col-lg-1"></div>
+ 
+    </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script>
+$(document).ready(function(){
+var html ='<tr><td><textarea class="form-control" style="width: 300px"name="question_name[]"></textarea></td><td><input type="file" class="form-control" name="figure[]"></td><td><input type="text" class=" form-control" name="marks[]"></td><td><input type="button" value="Remove" class="btn btn-danger" id="remove"></td></tr>';
+ var max= 6;  
+var x = 1;
+  $('#add').click(function(){
+    if(x<=max){
+     $('#table_feild').append(html);
+     x++;
+    }
+  });
+  $('#table_feild').on('click','#remove',function(){
+    $(this).closest('tr').remove();
+    x--;
+  });
+});
+</script>
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- Popper.js first, then Bootstrap JS -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+  </body>
+</html> -->
